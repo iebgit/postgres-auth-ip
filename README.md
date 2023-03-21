@@ -9,5 +9,4 @@
 7. Graceful shutdowns
 8. docker-compose up -d —build runs the whole app in background and does the migrations.
 9. Dockerfile and Docker compose files are in root directory
-# postgres-auth-ip
-# postgres-auth-ip
+
