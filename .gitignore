@@ -1,0 +1,5 @@
+pgData/
+node_modules/
+knexfile.js
+docker-compose.yml
+package-lock.json
