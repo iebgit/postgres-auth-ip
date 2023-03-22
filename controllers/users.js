@@ -16,7 +16,7 @@ exports.authenticate = (request, response, next) => {
   jwt.verify(token, secret, (error, payload) => {
     if (error) throw new Error("sign in error!");
     database("users")
-      .where({ username: payload.username })
+      .where({ username: payload.username, email: payload.email })
       .first()
       .then((user) => {
         request.user = user;

@@ -10,12 +10,19 @@ exports.storeUser = async (user, res) => {
         .first()
         .then(async (retrievedUser) => {
           if (!retrievedUser) {
+            res.json({
+              status: "credentials added",
+              user: user.username,
+            });
             await connection("users").insert({
               username: user.username,
               hashed_password: hashed_password,
               email: user.email,
             });
-          } else res.status(401).json({ error: "duplicate username" });
+          } else
+            res.json({
+              status: "duplicate username",
+            });
         });
     } catch (e) {
       console.log(e);

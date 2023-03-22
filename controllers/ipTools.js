@@ -3,7 +3,6 @@ const requestIp = require("request-ip");
 const { storeQuery } = require("../services/queries");
 
 exports.lookupIPAddresses = async function (req, res, next) {
-  console.log("HLKHSKLADFJDS");
   const { domain } = req.query;
 
   dns.resolve4(domain, async (err, addresses) => {
